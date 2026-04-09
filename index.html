@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspiration Travel — Voyages d'Exception en Tunisie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">
+    <img src="logo.png" alt="Inspiration Travel" class="loader-logo-img">
+  </div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text" data-i18n="loader_text">Bienvenue en Tunisie</div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="#destinations" onclick="closeMenu()" data-i18n="nav_excursions">Excursions</a>
+  <a href="#soufies" onclick="closeMenu()" data-i18n="nav_soufies">Visites Soufies</a>
+  <a href="#transfers" onclick="closeMenu()" data-i18n="nav_transfers">Transferts</a>
+  <a href="#booking" onclick="closeMenu()" data-i18n="nav_book">R&#233;server</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <img src="logo.png" alt="Inspiration Travel" class="nav-logo-img">
+  </a>
+  <div class="nav-center">
+    <a href="#destinations" data-i18n="nav_excursions">Excursions</a>
+    <a href="#soufies" data-i18n="nav_soufies">Visites Soufies</a>
+    <a href="#transfers" data-i18n="nav_transfers">Transferts</a>
+    <a href="#testimonials" data-i18n="nav_reviews">Avis</a>
+  </div>
+  <div class="nav-right">
+    <button class="lang-btn active" id="langFR" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+    <a href="#booking" class="nav-btn"><span data-i18n="nav_book">R&#233;server</span></a>
+  </div>
+  <button class="ham" id="ham">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-sky"></div>
+  <div class="stars" id="stars"></div>
+  <div class="moon">
+    <div class="moon-crater mc1"></div>
+    <div class="moon-crater mc2"></div>
+    <div class="moon-crater mc3"></div>
+  </div>
+  <div class="birds">
+    <div class="bird b1"></div>
+    <div class="bird b2"></div>
+    <div class="bird b3"></div>
+  </div>
+  <div class="particles" id="particles"></div>
+  <div class="horizon"></div>
+  <div class="mosque">
+    <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="170" cy="80" rx="55" ry="55"/>
+      <rect x="115" y="80" width="110" height="100"/>
+      <rect x="80" y="30" width="18" height="150"/>
+      <polygon points="80,30 89,5 98,30"/>
+      <rect x="242" y="30" width="18" height="150"/>
+      <polygon points="242,30 251,5 260,30"/>
+      <path d="M155,180 L155,130 Q170,110 185,130 L185,180 Z"/>
+      <ellipse cx="145" cy="105" rx="9" ry="12"/>
+      <ellipse cx="195" cy="105" rx="9" ry="12"/>
+      <path d="M163,28 Q157,20 163,12 Q155,14 153,20 Q151,26 157,30 Z" fill="#C8993A" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="dunes">
+    <div class="dune dune1"></div>
+    <div class="dune dune2"></div>
+    <div class="dune dune3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span data-i18n="hero_eyebrow">Tunisie &middot; Voyages d&apos;exception depuis 2026</span>
+    </div>
+    <h1 class="hero-title">
+      <span data-i18n="hero_title1">L&agrave; o&ugrave; le d&eacute;sert</span><br>
+      <em class="line2" data-i18n="hero_title2">rencontre l&apos;&acirc;me</em><br>
+      <span class="line3" data-i18n="hero_title3">du monde</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub" data-i18n="hero_sub">Excursions sur-mesure, transferts priv&eacute;s et immersions spirituelles soufies. Une Tunisie authentique, loin des sentiers battus.</p>
+      <div class="hero-ctas">
+        <a href="#destinations" class="cta-primary">
+          <span data-i18n="hero_cta1">D&eacute;couvrir nos circuits</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#soufies" class="cta-secondary">
+          &#9789; <span data-i18n="hero_cta2">Visites Soufies Exclusives</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span data-i18n="scroll_label">D&eacute;filer</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="mq">
+    <div class="marquee-item"><span class="marquee-dot"></span> Sahara &amp; Douz <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Carthage Antique <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> &Icirc;le de Djerba <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Kairouan Sacr&eacute;e <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Tozeur Oasis <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Sidi Bou Sa&iuml;d <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Tatouine &amp; Ksar <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> <span data-i18n="marq_soufies">Visites Soufies</span> <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Sahara &amp; Douz <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Carthage Antique <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> &Icirc;le de Djerba <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Kairouan Sacr&eacute;e <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Tozeur Oasis <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Sidi Bou Sa&iuml;d <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Tatouine &amp; Ksar <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span class="marquee-dot"></span> <span data-i18n="marq_soufies">Visites Soufies</span> <span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- DESTINATIONS -->
+<section id="destinations" class="s-pad">
+  <div class="dest-intro">
+    <div class="rl">
+      <div class="s-label"><div class="s-label-line"></div><span data-i18n="dest_label">Nos circuits</span></div>
+      <h2 class="s-title" data-i18n="dest_title">Des destinations<br><em>inoubliables</em></h2>
+      <p class="s-sub" data-i18n="dest_sub">De l&apos;or du Sahara aux bleus de Sidi Bou Sa&iuml;d, chaque destination est une invitation &agrave; vivre la Tunisie de l&apos;int&eacute;rieur.</p>
+    </div>
+    <div class="rr dest-intro-right">
+      <div class="dest-stat">
+        <div class="dest-stat-num">12+</div>
+        <div class="dest-stat-label" data-i18n="stat_dest">Destinations</div>
+      </div>
+      <div class="dest-stat">
+        <div class="dest-stat-num">500+</div>
+        <div class="dest-stat-label" data-i18n="stat_travelers">Voyageurs satisfaits</div>
+      </div>
+    </div>
+  </div>
+  <div class="dest-grid rx">
+    <div class="dest-card">
+      <div class="dest-card-img img-sahara"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag" data-i18n="card1_tag">Aventure &middot; Sud</div>
+        <div class="dest-name" data-i18n="card1_name">Excursion Sud Tunisien</div>
+        <div class="dest-desc" data-i18n="card1_desc">Sahara, dunes dor&eacute;es, ksour berb&egrave;res, villages troglodytes&hellip; Le grand Sud vous attend. Prix selon destination et programme choisi.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_on_request">Prix selon <small>itin&eacute;raire</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img img-carthage"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag" data-i18n="card2_tag">Culturel &middot; Pack 4 pers.</div>
+        <div class="dest-name" data-i18n="card2_name">Excursion Tunis</div>
+        <div class="dest-desc" data-i18n="card2_desc">M&eacute;dina, Carthage, Bardo, Sidi Bou Sa&iuml;d&hellip; Tunis et ses tr&eacute;sors en une journ&eacute;e inoubliable.</div>
+        <div class="dest-footer">
+          <div class="dest-price">250 DT <small data-i18n="per4">/ 4 pers.</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img img-sidi"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag" data-i18n="card3_tag">Spirituel &amp; C&ocirc;tier</div>
+        <div class="dest-name">Kairouan &middot; Sousse &middot; Jem</div>
+        <div class="dest-desc" data-i18n="card3_desc">La cit&eacute; sainte de Kairouan, les plages de Sousse et le majestueux amphith&eacute;&acirc;tre d&apos;El Jem en une excursion unique.</div>
+        <div class="dest-footer">
+          <div class="dest-price">300 DT <small data-i18n="per4">/ 4 pers.</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img img-djerba"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag" data-i18n="card4_tag">&Icirc;lien &middot; D&eacute;couverte</div>
+        <div class="dest-name" data-i18n="card4_name">&Icirc;le de Djerba</div>
+        <div class="dest-desc" data-i18n="card4_desc">Mille et une nuits en r&eacute;alit&eacute; : march&eacute;s anim&eacute;s, plages turquoise, synagogue de la Ghriba. Une &icirc;le hors du temps.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_on_request">Prix selon <small>itin&eacute;raire</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img img-ksar"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag" data-i18n="card5_tag">&#11088; Circuit Complet</div>
+        <div class="dest-name" data-i18n="card5_name">Circuit Sur Mesure</div>
+        <div class="dest-desc" data-i18n="card5_desc">Construisez votre propre aventure tunisienne. Destinations, dur&eacute;e, rythme &mdash; tout est adapt&eacute; selon vos envies.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_quote">Sur <small>devis</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOUFIES -->
+<section id="soufies" class="s-pad">
+  <div class="soufies-bg"></div>
+  <div class="geo-pattern"></div>
+  <div class="soufies-grid">
+    <div class="soufies-visual rl">
+      <div class="soufies-img-wrap">
+        <div class="soufies-img">
+          <div class="mandala-wrap">
+            <div class="mandala-ring mr1"></div>
+            <div class="mandala-ring mr2"></div>
+            <div class="mandala-ring mr3"></div>
+            <div class="mandala-ring mr4"></div>
+            <div class="mandala-center"></div>
+          </div>
+        </div>
+        <div class="soufies-img-label">
+          <h3 data-i18n="sou_img_title">L&apos;&acirc;me du soufisme tunisien</h3>
+          <p data-i18n="sou_img_sub">Une exp&eacute;rience spirituelle unique, guid&eacute;e par des experts passion&eacute;s.</p>
+        </div>
+      </div>
+      <div class="soufies-badge">
+        <span>&#9733;</span>
+        <span data-i18n="sou_badge">Exp&eacute;rience Unique</span>
+      </div>
+    </div>
+    <div class="rr">
+      <div class="s-label"><div class="s-label-line"></div><span data-i18n="sou_label">Tourisme spirituel</span></div>
+      <h2 class="s-title" data-i18n="sou_title">Immersion au<br>c&oelig;ur du<br><em>soufisme</em></h2>
+      <p class="s-sub" data-i18n="sou_sub">La Tunisie abrite l&apos;une des traditions soufies les plus riches du monde arabe. Nos guides vous ouvrent des portes habituellement ferm&eacute;es aux voyageurs ordinaires.</p>
+      <ul class="soufies-features">
+        <li class="sf-item">
+          <div class="sf-num">01</div>
+          <div class="sf-body">
+            <h4 data-i18n="sou1_title">Ziyara Soufie &middot; Tunis</h4>
+            <p data-i18n="sou1_desc">Visite guid&eacute;e des za&ouml;u&iuml;as et mausol&eacute;es soufis de Tunis. Acc&egrave;s privil&eacute;gi&eacute; aux sanctuaires, rencontres avec des ma&icirc;tres spirituels.</p>
+            <p style="margin-top:10px;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)">220 DT</p>
+          </div>
+        </li>
+        <li class="sf-item">
+          <div class="sf-num">02</div>
+          <div class="sf-body">
+            <h4 data-i18n="sou2_title">Ziyara Soufie &middot; Kairouan</h4>
+            <p data-i18n="sou2_desc">Immersion dans la cit&eacute; sainte de Kairouan &mdash; za&ouml;u&iuml;as historiques, c&eacute;r&eacute;monies de dhikr, rencontres authentiques avec les confr&eacute;ries.</p>
+            <p style="margin-top:10px;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)">300 DT</p>
+          </div>
+        </li>
+        <li class="sf-item">
+          <div class="sf-num">03</div>
+          <div class="sf-body">
+            <h4 data-i18n="sou3_title">Circuit Soufie Sur Mesure</h4>
+            <p data-i18n="sou3_desc">Combinez plusieurs ziyaras, personnalisez votre itin&eacute;raire spirituel selon vos envies. Dur&eacute;e et destinations au choix.</p>
+            <p style="margin-top:10px;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)" data-i18n="price_quote_text">Sur devis</p>
+          </div>
+        </li>
+      </ul>
+      <div style="margin-top:44px">
+        <a href="#booking" class="cta-primary"><span data-i18n="sou_cta">Planifier ma visite soufie</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFERS -->
+<section id="transfers" class="s-pad">
+  <div class="transfers-intro">
+    <div class="rl">
+      <div class="s-label"><div class="s-label-line"></div><span data-i18n="tr_label">Transferts Priv&eacute;s</span></div>
+      <h2 class="s-title" data-i18n="tr_title">Votre trajet,<br><em>notre priorit&eacute;</em></h2>
+    </div>
+    <div class="rr">
+      <p class="s-sub" data-i18n="tr_sub">Depuis l&apos;A&eacute;roport Tunis-Carthage ou l&apos;A&eacute;roport Enfidha, nos chauffeurs professionnels vous conduisent partout en Tunisie. Confort, ponctualit&eacute;, prix fixes.</p>
+    </div>
+  </div>
+  <div style="margin-bottom:16px">
+    <div class="s-label rx"><div class="s-label-line"></div>&#9992;&#65039; <span data-i18n="tr_carthage_label">A&eacute;roport Tunis-Carthage &middot; Pack 4 personnes</span></div>
+  </div>
+  <div class="transfers-grid" style="margin-bottom:4px">
+    <div class="tr-card rx d1">
+      <div class="tr-tag-corner"></div>
+      <div class="tr-icon">&#127958;&#65039;</div>
+      <div class="tr-name">&#8596; Hammamet</div>
+      <div class="tr-desc" data-i18n="tr1_desc">A&eacute;roport Tunis-Carthage &#8596; Hammamet. Transfert direct, v&eacute;hicule climatis&eacute;, chauffeur professionnel. <strong style="color:var(--gold2)">Aller &amp; Retour inclus.</strong></div>
+      <div class="tr-price">120<small> DT A/R</small></div>
+    </div>
+    <div class="tr-card rx d2">
+      <div class="tr-tag-corner"></div>
+      <div class="tr-icon">&#127754;</div>
+      <div class="tr-name">&#8596; Sousse</div>
+      <div class="tr-desc" data-i18n="tr2_desc">A&eacute;roport Tunis-Carthage &#8596; Sousse. Trajet confortable sur autoroute, prise en charge imm&eacute;diate. <strong style="color:var(--gold2)">Aller &amp; Retour inclus.</strong></div>
+      <div class="tr-price">180<small> DT A/R</small></div>
+    </div>
+    <div class="tr-card rx d3">
+      <div class="tr-tag-corner"></div>
+      <div class="tr-icon">&#128332;</div>
+      <div class="tr-name">&#8596; Monastir</div>
+      <div class="tr-desc" data-i18n="tr3_desc">A&eacute;roport Tunis-Carthage &#8596; Monastir. Accueil personnalis&eacute; avec pancarte nominative. <strong style="color:var(--gold2)">Aller &amp; Retour inclus.</strong></div>
+      <div class="tr-price">200<small> DT A/R</small></div>
+    </div>
+    <div class="tr-card rx d4" style="background:linear-gradient(135deg,rgba(200,153,58,.08),var(--ink3));border-top:2px solid var(--gold)">
+      <div class="tr-tag-corner"></div>
+      <div class="tr-icon">&#127796;</div>
+      <div class="tr-name" data-i18n="tr4_name">&#8596; Le Sud</div>
+      <div class="tr-desc" data-i18n="tr4_desc">A&eacute;roport Tunis-Carthage &#8596; Destinations du Sud tunisien. <strong style="color:var(--gold2)">Aller &amp; Retour inclus.</strong></div>
+      <div class="tr-price"><sup style="font-size:11px" data-i18n="from">&Agrave; partir de </sup>380<small> DT A/R</small></div>
+    </div>
+  </div>
+  <div style="margin:40px 0 16px">
+    <div class="s-label rx"><div class="s-label-line"></div>&#9992;&#65039; <span data-i18n="tr_enfidha_label">A&eacute;roport Enfidha (Nfidha) &middot; M&ecirc;mes tarifs</span></div>
+  </div>
+  <div style="background:var(--ink3);border-left:2px solid var(--gold);padding:20px 28px;margin-bottom:48px" class="rx">
+    <p style="font-size:14px;color:var(--fog);line-height:1.8" data-i18n="tr_enfidha_text">
+      Les m&ecirc;mes destinations et les m&ecirc;mes tarifs s&apos;appliquent depuis l&apos;<strong style="color:var(--sand)">A&eacute;roport International Enfidha-Hammamet</strong>. Pack 4 personnes &middot; V&eacute;hicule climatis&eacute; &middot; Chauffeur professionnel &middot; <strong style="color:var(--gold)">Sud &agrave; partir de 380 DT aller-retour.</strong>
+    </p>
+  </div>
+  <div style="margin-bottom:16px">
+    <div class="s-label rx"><div class="s-label-line"></div>&#128663; <span data-i18n="tr_tunis_label">Transferts &amp; D&eacute;placements &agrave; Tunis</span></div>
+  </div>
+  <div class="transfers-grid" style="grid-template-columns:1fr 1fr;margin-bottom:0">
+    <div class="tr-card rx d1" style="grid-column:1/2">
+      <div class="tr-tag-corner"></div>
+      <div class="tr-icon">&#128507;</div>
+      <div class="tr-name" data-i18n="tr5_name">&#8596; D&eacute;placements &agrave; Tunis</div>
+      <div class="tr-desc" data-i18n="tr5_desc">Transferts &amp; circuits dans Tunis et sa r&eacute;gion selon vos besoins. <strong style="color:var(--gold2)">Aller &amp; Retour inclus.</strong> Tarif selon itin&eacute;raire choisi.</div>
+      <div class="tr-price"><sup data-i18n="from">&Agrave; partir de </sup>150<small> DT A/R</small></div>
+    </div>
+    <div class="tr-card rx d2" style="grid-column:2/3;background:linear-gradient(135deg,rgba(200,153,58,.06),var(--ink3))">
+      <div class="tr-tag-corner"></div>
+      <div class="tr-icon">&#128142;</div>
+      <div class="tr-name" data-i18n="tr6_name">Sur Mesure &middot; Partout</div>
+      <div class="tr-desc" data-i18n="tr6_desc">Un itin&eacute;raire unique selon vos envies : ville, campagne, sud, c&ocirc;te&hellip; Prix d&eacute;termin&eacute; selon destination et programme. Contactez-nous.</div>
+      <div class="tr-price" data-i18n="price_quote">Sur<small> devis</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="s-pad" style="padding-bottom:60px">
+  <div class="rx">
+    <div class="s-label"><div class="s-label-line"></div><span data-i18n="testi_label">Ils nous font confiance</span></div>
+    <h2 class="s-title" data-i18n="testi_title">Ce que disent<br>nos <em>voyageurs</em></h2>
+  </div>
+  <div style="overflow:hidden; margin:0 -64px">
+    <div class="testi-track">
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi1">Une exp&eacute;rience au-del&agrave; de toute attente. La visite soufie de Kairouan m&apos;a profond&eacute;ment touch&eacute;. Guide exceptionnel, organisation parfaite.</div><div class="testi-footer"><div class="testi-avatar">M</div><div><div class="testi-name">Marc Lefebvre</div><div class="testi-origin">France &middot; Paris</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi2">Le circuit Sahara &eacute;tait magique. Nuit sous les &eacute;toiles, silence absolu, ciel incroyable. Je recommande &agrave; 100% &agrave; tous les voyageurs.</div><div class="testi-footer"><div class="testi-avatar">S</div><div><div class="testi-name">Sophie Williams</div><div class="testi-origin">UK &middot; London</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi3">Transfert a&eacute;roport impeccable, ponctuel et professionnel. Chauffeur tr&egrave;s agr&eacute;able et multilingue. Je reviendrai certainement.</div><div class="testi-footer"><div class="testi-avatar">A</div><div><div class="testi-name">Ahmad Al-Rashid</div><div class="testi-origin">&Eacute;mirats &middot; Duba&iuml;</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi4">Djerba comme je n&apos;aurais jamais pu la d&eacute;couvrir seule. Les coins cach&eacute;s, les rencontres locales, la nourriture&hellip; tout &eacute;tait parfait.</div><div class="testi-footer"><div class="testi-avatar">L</div><div><div class="testi-name">Laura Mart&iacute;nez</div><div class="testi-origin">Espagne &middot; Madrid</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi5">La c&eacute;r&eacute;monie de dhikr &eacute;tait une exp&eacute;rience spirituelle hors du commun. Je suis reparti transform&eacute;. Merci infiniment &agrave; toute l&apos;&eacute;quipe.</div><div class="testi-footer"><div class="testi-avatar">J</div><div><div class="testi-name">James O&apos;Brien</div><div class="testi-origin">Irlande &middot; Dublin</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <!-- duplicates -->
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi1">Une exp&eacute;rience au-del&agrave; de toute attente. La visite soufie de Kairouan m&apos;a profond&eacute;ment touch&eacute;. Guide exceptionnel, organisation parfaite.</div><div class="testi-footer"><div class="testi-avatar">M</div><div><div class="testi-name">Marc Lefebvre</div><div class="testi-origin">France &middot; Paris</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi2">Le circuit Sahara &eacute;tait magique. Nuit sous les &eacute;toiles, silence absolu, ciel incroyable. Je recommande &agrave; 100% &agrave; tous les voyageurs.</div><div class="testi-footer"><div class="testi-avatar">S</div><div><div class="testi-name">Sophie Williams</div><div class="testi-origin">UK &middot; London</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi3">Transfert a&eacute;roport impeccable, ponctuel et professionnel. Chauffeur tr&egrave;s agr&eacute;able et multilingue. Je reviendrai certainement.</div><div class="testi-footer"><div class="testi-avatar">A</div><div><div class="testi-name">Ahmad Al-Rashid</div><div class="testi-origin">&Eacute;mirats &middot; Duba&iuml;</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi4">Djerba comme je n&apos;aurais jamais pu la d&eacute;couvrir seule. Les coins cach&eacute;s, les rencontres locales, la nourriture&hellip; tout &eacute;tait parfait.</div><div class="testi-footer"><div class="testi-avatar">L</div><div><div class="testi-name">Laura Mart&iacute;nez</div><div class="testi-origin">Espagne &middot; Madrid</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+      <div class="testi-card"><div class="testi-quote">&ldquo;</div><div class="testi-text" data-i18n="testi5">La c&eacute;r&eacute;monie de dhikr &eacute;tait une exp&eacute;rience spirituelle hors du commun. Je suis reparti transform&eacute;. Merci infiniment &agrave; toute l&apos;&eacute;quipe.</div><div class="testi-footer"><div class="testi-avatar">J</div><div><div class="testi-name">James O&apos;Brien</div><div class="testi-origin">Irlande &middot; Dublin</div></div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="s-pad">
+  <div class="booking-decor"></div>
+  <div class="booking-decor-pattern"></div>
+  <div class="booking-wrap">
+    <div class="booking-info rl">
+      <div class="s-label"><div class="s-label-line"></div><span data-i18n="book_label">R&eacute;servation</span></div>
+      <h2 class="booking-info" data-i18n="book_title">Planifions votre<br><em>voyage ensemble</em></h2>
+      <p data-i18n="book_sub">Notre &eacute;quipe de sp&eacute;cialistes vous r&eacute;pond sous 12h. Pour les urgences et r&eacute;servations de derni&egrave;re minute, contactez-nous directement.</p>
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="contact-row-icon">&#128222;</div>
+          <div>
+            <div class="contact-row-label" data-i18n="contact_phone_label">T&eacute;l&eacute;phone &amp; WhatsApp</div>
+            <div class="contact-row-val">+216 29 808 207</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">&#9993;&#65039;</div>
+          <div>
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-val">inspirationtravel14@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">&#128336;</div>
+          <div>
+            <div class="contact-row-label" data-i18n="contact_hours_label">Disponibilit&eacute;</div>
+            <div class="contact-row-val" data-i18n="contact_hours_val">7j/7 &middot; 8h &mdash; 22h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-box rr">
+      <div class="form-row2">
+        <div class="form-group">
+          <label data-i18n="form_firstname">Pr&eacute;nom</label>
+          <input id="f_prenom" type="text" placeholder="Ahmed" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_lastname">Nom</label>
+          <input id="f_nom" type="text" placeholder="Ben Ali" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input id="f_email" type="email" placeholder="ahmed@exemple.com" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_phone">T&eacute;l&eacute;phone / WhatsApp</label>
+        <input id="f_tel" type="tel" placeholder="+216 29 808 207">
+      </div>
+      <div class="form-row2">
+        <div class="form-group">
+          <label data-i18n="form_service">Type de service</label>
+          <select id="f_service"></select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_persons">Nombre de personnes</label>
+          <input id="f_personnes" type="number" placeholder="2" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_date">Date souhait&eacute;e</label>
+        <input id="f_date" type="date">
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_message">Message (optionnel)</label>
+        <textarea id="f_message" placeholder="Pr&eacute;cisez vos souhaits, besoins sp&eacute;ciaux ou questions&hellip;"></textarea>
+      </div>
+      <button class="form-submit" id="fsubmit" onclick="submitForm()" data-i18n="form_submit">Envoyer ma demande</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Inspiration Travel" class="footer-logo-img">
+      <p data-i18n="footer_about">Votre partenaire de confiance pour des excursions, transferts et visites soufies d&apos;exception en Tunisie. Authentique, professionnel, inoubliable.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/aziz.galloub.3?locale=fr_FR" class="social-btn" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/azizgalloub/" class="social-btn" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/21629808207" class="social-btn" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footer_services">Services</h5>
+      <ul>
+        <li><a href="#destinations" data-i18n="nav_excursions">Excursions</a></li>
+        <li><a href="#soufies" data-i18n="nav_soufies">Visites Soufies</a></li>
+        <li><a href="#transfers" data-i18n="nav_transfers">Transferts</a></li>
+        <li><a href="#booking" data-i18n="footer_custom">Sur Mesure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footer_destinations">Destinations</h5>
+      <ul>
+        <li><a href="#">Sahara &amp; Douz</a></li>
+        <li><a href="#">Carthage</a></li>
+        <li><a href="#">&Icirc;le de Djerba</a></li>
+        <li><a href="#">Kairouan</a></li>
+        <li><a href="#">Sidi Bou Sa&iuml;d</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+21629808207">+216 29 808 207</a></li>
+        <li><a href="mailto:inspirationtravel14@gmail.com">inspirationtravel14@gmail.com</a></li>
+        <li><a href="https://wa.me/21629808207" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/azizgalloub/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/aziz.galloub.3?locale=fr_FR" target="_blank">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="footer_copy">&copy; 2026 Inspiration Travel &mdash; Tous droits r&eacute;serv&eacute;s. Tunisie.</p>
+    <div style="display:flex;gap:24px">
+      <a href="#" data-i18n="footer_privacy">Politique de confidentialit&eacute;</a>
+      <a href="#" data-i18n="footer_terms">Conditions g&eacute;n&eacute;rales</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
