@@ -889,6 +889,26 @@ footer {
   nav { padding: 20px 40px; }
   nav.solid { padding: 14px 40px; }
 
+  /* ✅ Show lang buttons on mobile nav */
+  .nav-right {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Hide only the Reserve button on mobile nav */
+  .nav-right .nav-btn {
+    display: none;
+  }
+
+  /* Make lang buttons tappable */
+  .lang-btn {
+    cursor: pointer !important;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
   /* Hero */
   .hero-content { padding: 0 40px 80px; }
   .hero-title { font-size: clamp(44px, 6vw, 80px); }
