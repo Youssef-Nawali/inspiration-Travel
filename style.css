@@ -1073,3 +1073,15 @@ footer {
 .tr-card {
   grid-column: 1 / -1 !important;
 }
+
+.mob-lang {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.mob-lang .lang-btn {
+  padding: 10px 28px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
