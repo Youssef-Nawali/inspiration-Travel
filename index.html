@@ -38,6 +38,21 @@
   <a href="#booking" onclick="closeMenu()" data-i18n="nav_book">R&#233;server</a>
 </div>
 
+  <!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="#destinations" onclick="closeMenu()" data-i18n="nav_excursions">Excursions</a>
+  <a href="#soufies" onclick="closeMenu()" data-i18n="nav_soufies">Visites Soufies</a>
+  <a href="#transfers" onclick="closeMenu()" data-i18n="nav_transfers">Transferts</a>
+  <a href="#booking" onclick="closeMenu()" data-i18n="nav_book">Réserver</a>
+
+  <!-- ✅ AJOUTER CES LIGNES -->
+  <div class="mob-lang">
+    <button class="lang-btn active" id="langFR_mob" onclick="setLang('fr'); closeMenu()">FR</button>
+    <button class="lang-btn" id="langEN_mob" onclick="setLang('en'); closeMenu()">EN</button>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
