@@ -1,5 +1,5 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
 :root {
   --sand: #F5EDD8;
@@ -634,15 +634,17 @@ nav.solid {
 .sf-body p { font-size: 13px; color: var(--fog); line-height:1.7; }
 
 /* ── TRANSFERS ── */
-#transfers { background: var(--ink2); }
+#transfers { background: var(--ink2); overflow-x: hidden; }
 .transfers-intro { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-bottom:80px; }
-.transfers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; }
+.transfers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; width:100%; }
+.transfers-grid-2col { grid-template-columns: 1fr 1fr !important; }
 .tr-card {
   background: var(--ink3);
   padding: 48px 36px;
   position: relative; overflow: hidden; cursor: none;
   transition: all .4s cubic-bezier(.25,.46,.45,.94);
   border-top: 2px solid transparent;
+  min-width: 0; word-break: break-word;
 }
 .tr-card::before {
   content:''; position:absolute; inset:0;
@@ -976,7 +978,8 @@ footer {
   .soufies-badge span:first-child { font-size: 22px; }
 
   /* Transfers */
-  .transfers-grid { grid-template-columns: 1fr !important; }
+  .transfers-grid,
+  .transfers-grid-2col { grid-template-columns: 1fr !important; }
   .tr-card { padding: 32px 24px; }
   .tr-price { font-size: 26px; }
 
