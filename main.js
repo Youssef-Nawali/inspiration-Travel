@@ -290,6 +290,12 @@ function setLang(lang) {
     if (btnFR) btnFR.classList.toggle('active', lang === 'fr');
     if (btnEN) btnEN.classList.toggle('active', lang === 'en');
 
+     // Sync mobile buttons
+const btnFR_mob = document.getElementById('langFR_mob');
+const btnEN_mob = document.getElementById('langEN_mob');
+if (btnFR_mob) btnFR_mob.classList.toggle('active', lang === 'fr');
+if (btnEN_mob) btnEN_mob.classList.toggle('active', lang === 'en');
+
     /* ── Animate in ── */
     animated.forEach((el, i) => {
       setTimeout(() => {
