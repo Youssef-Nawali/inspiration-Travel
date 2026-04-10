@@ -1065,3 +1065,11 @@ footer {
   transition: transform .3s ease;
 }
 .lang-btn.switching::after { transform: scaleX(1); }
+
+/* Add inside your @media(max-width:768px) block */
+.transfers-grid {
+  grid-template-columns: 1fr !important;
+}
+.tr-card {
+  grid-column: 1 / -1 !important;
+}
