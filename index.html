@@ -38,6 +38,21 @@
   <a href="#booking" onclick="closeMenu()" data-i18n="nav_book">R&#233;server</a>
 </div>
 
+  <!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="#destinations" onclick="closeMenu()" data-i18n="nav_excursions">Excursions</a>
+  <a href="#soufies" onclick="closeMenu()" data-i18n="nav_soufies">Visites Soufies</a>
+  <a href="#transfers" onclick="closeMenu()" data-i18n="nav_transfers">Transferts</a>
+  <a href="#booking" onclick="closeMenu()" data-i18n="nav_book">Réserver</a>
+
+  <!-- ✅ AJOUTER CES LIGNES -->
+  <div class="mob-lang">
+    <button class="lang-btn active" id="langFR_mob" onclick="setLang('fr'); closeMenu()">FR</button>
+    <button class="lang-btn" id="langEN_mob" onclick="setLang('en'); closeMenu()">EN</button>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
@@ -352,14 +367,14 @@
     <div class="s-label rx"><div class="s-label-line"></div>&#128663; <span data-i18n="tr_tunis_label">Transferts &amp; D&eacute;placements &agrave; Tunis</span></div>
   </div>
   <div class="transfers-grid" style="grid-template-columns:1fr 1fr;margin-bottom:0">
-    <div class="tr-card rx d1" style="grid-column:1/2">
+    <div class="tr-card rx d1">
       <div class="tr-tag-corner"></div>
       <div class="tr-icon">&#128507;</div>
       <div class="tr-name" data-i18n="tr5_name">&#8596; D&eacute;placements &agrave; Tunis</div>
       <div class="tr-desc" data-i18n="tr5_desc">Transferts &amp; circuits dans Tunis et sa r&eacute;gion selon vos besoins. <strong style="color:var(--gold2)">Aller &amp; Retour inclus.</strong> Tarif selon itin&eacute;raire choisi.</div>
       <div class="tr-price"><sup data-i18n="from">&Agrave; partir de </sup>150<small> DT A/R</small></div>
     </div>
-    <div class="tr-card rx d2" style="grid-column:2/3;background:linear-gradient(135deg,rgba(200,153,58,.06),var(--ink3))">
+    <div class="tr-card rx d2" style="background:linear-gradient(135deg,rgba(200,153,58,.06),var(--ink3))">
       <div class="tr-tag-corner"></div>
       <div class="tr-icon">&#128142;</div>
       <div class="tr-name" data-i18n="tr6_name">Sur Mesure &middot; Partout</div>
