@@ -42,9 +42,17 @@ const translations = {
     card5_name: 'Circuit Sur Mesure',
     card5_desc: 'Construisez votre propre aventure tunisienne. Destinations, durée, rythme — tout est adapté selon vos envies.',
     per4: '/ 4 pers.',
+    price_per4: 'Prix selon <small>/ 4 pers.</small>',
     price_on_request: 'Prix selon <small>itinéraire</small>',
     price_quote: 'Sur <small>devis</small>',
     price_quote_text: 'Sur devis',
+    price_ham: 'Prix selon<small> A/R</small>',
+    price_sou: 'Prix selon<small> A/R</small>',
+    price_mon: 'Prix selon<small> A/R</small>',
+    price_sud: 'Prix selon<small> A/R</small>',
+    price_sou1: 'Prix selon itinéraire',
+    price_sou2: 'Prix selon itinéraire',
+    card3_name: 'Kairouan · Sousse · Jem',
     sou_label: 'Tourisme spirituel',
     sou_title: 'Immersion au<br>cœur du<br><em>soufisme</em>',
     sou_sub: 'La Tunisie abrite l\'une des traditions soufies les plus riches du monde arabe. Nos guides vous ouvrent des portes habituellement fermées aux voyageurs ordinaires.',
@@ -60,8 +68,7 @@ const translations = {
     sou_cta: 'Planifier ma visite soufie',
     tr_label: 'Transferts Privés',
     tr_title: 'Votre trajet,<br><em>notre priorité</em>',
-    tr_sub: 'Depuis l\'Aéroport Tunis-Carthage ou l\'Aéroport Enfidha, nos chauffeurs professionnels vous conduisent partout en Tunisie. Confort, ponctualité, prix fixes.',
-    tr_carthage_label: 'Aéroport Tunis-Carthage · Pack 4 personnes',
+tr_sub: 'Nos chauffeurs professionnels vous conduisent partout en Tunisie. Confort, ponctualité, prix fixes. Contacter pour VIP',    tr_carthage_label: 'Aéroport Tunis-Carthage · Pack 4 personnes',
     tr1_desc: 'Aéroport Tunis-Carthage ↔ Hammamet. Transfert direct, véhicule climatisé, chauffeur professionnel. <strong style="color:var(--gold2)">Aller & Retour inclus.</strong>',
     tr2_desc: 'Aéroport Tunis-Carthage ↔ Sousse. Trajet confortable sur autoroute, prise en charge immédiate. <strong style="color:var(--gold2)">Aller & Retour inclus.</strong>',
     tr3_desc: 'Aéroport Tunis-Carthage ↔ Monastir. Accueil personnalisé avec pancarte nominative. <strong style="color:var(--gold2)">Aller & Retour inclus.</strong>',
@@ -108,17 +115,17 @@ const translations = {
     footer_privacy: 'Politique de confidentialité',
     footer_terms: 'Conditions générales',
     service_options: [
-      'Excursion Tunis (250 DT / 4 pers.)',
-      'Excursion Kairouan · Sousse · Jem (300 DT / 4 pers.)',
-      'Excursion Sud Tunisien (sur devis)',
-      'Transfert A/R Aéroport Carthage ↔ Hammamet (120 DT)',
-      'Transfert A/R Aéroport Carthage ↔ Sousse (180 DT)',
-      'Transfert A/R Aéroport Carthage ↔ Monastir (200 DT)',
-      'Transfert A/R Aéroport Carthage ↔ Sud (380 DT)',
-      'Transfert A/R Aéroport Enfidha (mêmes tarifs)',
-      'Transfert A/R à Tunis (à partir 150 DT)',
-      'Ziyara Soufie Tunis (220 DT)',
-      'Ziyara Soufie Kairouan (300 DT)',
+      'Excursion Tunis',
+      'Excursion Kairouan · Sousse · Jem',
+      'Excursion Sud Tunisien ',
+      'Transfert A/R Aéroport Carthage ↔ Hammamet',
+      'Transfert A/R Aéroport Carthage ↔ Sousse ',
+      'Transfert A/R Aéroport Carthage ↔ Monastir',
+      'Transfert A/R Aéroport Carthage ↔ Sud',
+      'Transfert A/R Aéroport Enfidha',
+      'Transfert A/R à Tunis',
+      'Ziyara Soufie Tunis',
+      'Ziyara Soufie Kairouan',
       'Circuit Sur Mesure'
     ]
   },
@@ -159,9 +166,17 @@ const translations = {
     card5_name: 'Custom Tour',
     card5_desc: 'Build your own Tunisian adventure. Destinations, duration, pace — everything is tailored to your desires.',
     per4: '/ 4 pers.',
+    price_per4: 'Price <small>/ 4 pers.</small>',
     price_on_request: 'Price <small>on request</small>',
     price_quote: 'On <small>quote</small>',
     price_quote_text: 'On quote',
+    price_ham: 'Price<small> per trip</small>',
+    price_sou: 'Price<small> per trip</small>',
+    price_mon: 'Price<small> per trip</small>',
+    price_sud: 'Price<small> per trip</small>',
+    price_sou1: 'Price on request',
+    price_sou2: 'Price on request',
+    card3_name: 'Kairouan · Sousse · Jem',
     sou_label: 'Spiritual Tourism',
     sou_title: 'Immersion at the<br>heart of<br><em>Sufism</em>',
     sou_sub: 'Tunisia is home to one of the richest Sufi traditions in the Arab world. Our guides open doors usually closed to ordinary travelers.',
@@ -177,8 +192,7 @@ const translations = {
     sou_cta: 'Plan my Sufi visit',
     tr_label: 'Private Transfers',
     tr_title: 'Your journey,<br><em>our priority</em>',
-    tr_sub: 'From Tunis-Carthage Airport or Enfidha Airport, our professional drivers take you anywhere in Tunisia. Comfort, punctuality, fixed prices.',
-    tr_carthage_label: 'Tunis-Carthage Airport · Pack 4 persons',
+tr_sub: 'Our professional drivers take you anywhere in Tunisia. Comfort, punctuality, fixed prices. Contact for VIP',    tr_carthage_label: 'Tunis-Carthage Airport · Pack 4 persons',
     tr1_desc: 'Tunis-Carthage Airport ↔ Hammamet. Direct transfer, air-conditioned vehicle, professional driver. <strong style="color:var(--gold2)">Round trip included.</strong>',
     tr2_desc: 'Tunis-Carthage Airport ↔ Sousse. Comfortable motorway journey, immediate pickup. <strong style="color:var(--gold2)">Round trip included.</strong>',
     tr3_desc: 'Tunis-Carthage Airport ↔ Monastir. Personalised welcome with name board. <strong style="color:var(--gold2)">Round trip included.</strong>',
@@ -225,17 +239,17 @@ const translations = {
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms & Conditions',
     service_options: [
-      'Tunis Excursion (250 DT / 4 pers.)',
-      'Kairouan · Sousse · Jem Excursion (300 DT / 4 pers.)',
-      'South Tunisia Excursion (on quote)',
-      'Round Trip Carthage Airport ↔ Hammamet (120 DT)',
-      'Round Trip Carthage Airport ↔ Sousse (180 DT)',
-      'Round Trip Carthage Airport ↔ Monastir (200 DT)',
-      'Round Trip Carthage Airport ↔ South (380 DT)',
-      'Round Trip Enfidha Airport (same rates)',
-      'Round Trip Tunis City (from 150 DT)',
-      'Sufi Ziyara Tunis (220 DT)',
-      'Sufi Ziyara Kairouan (300 DT)',
+      'Tunis Excursion ',
+      'Kairouan · Sousse · Jem Excursion ',
+      'South Tunisia Excursion',
+      'Round Trip Carthage Airport ↔ Hammamet',
+      'Round Trip Carthage Airport ↔ Sousse',
+      'Round Trip Carthage Airport ↔ Monastir',
+      'Round Trip Carthage Airport ↔ South',
+      'Round Trip Enfidha Airport',
+      'Round Trip Tunis City',
+      'Sufi Ziyara Tunis',
+      'Sufi Ziyara Kairouan',
       'Custom Circuit'
     ]
   }
@@ -289,12 +303,6 @@ function setLang(lang) {
 
     if (btnFR) btnFR.classList.toggle('active', lang === 'fr');
     if (btnEN) btnEN.classList.toggle('active', lang === 'en');
-
-     // Sync mobile buttons
-const btnFR_mob = document.getElementById('langFR_mob');
-const btnEN_mob = document.getElementById('langEN_mob');
-if (btnFR_mob) btnFR_mob.classList.toggle('active', lang === 'fr');
-if (btnEN_mob) btnEN_mob.classList.toggle('active', lang === 'en');
 
     /* ── Animate in ── */
     animated.forEach((el, i) => {
