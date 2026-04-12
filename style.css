@@ -1,5 +1,5 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 :root {
   --sand: #F5EDD8;
@@ -634,17 +634,15 @@ nav.solid {
 .sf-body p { font-size: 13px; color: var(--fog); line-height:1.7; }
 
 /* ── TRANSFERS ── */
-#transfers { background: var(--ink2); overflow-x: hidden; }
+#transfers { background: var(--ink2); }
 .transfers-intro { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-bottom:80px; }
-.transfers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; width:100%; }
-.transfers-grid-2col { grid-template-columns: 1fr 1fr !important; }
+.transfers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; }
 .tr-card {
   background: var(--ink3);
   padding: 48px 36px;
   position: relative; overflow: hidden; cursor: none;
   transition: all .4s cubic-bezier(.25,.46,.45,.94);
   border-top: 2px solid transparent;
-  min-width: 0; word-break: break-word;
 }
 .tr-card::before {
   content:''; position:absolute; inset:0;
@@ -861,180 +859,47 @@ footer {
 
 /* ── MOBILE MENU ── */
 .mob-menu {
-  display: none; position: fixed; inset: 0; z-index: 2000;
-  background: rgba(14,12,10,.98); backdrop-filter: blur(20px);
-  flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+  display:none; position:fixed; inset:0; z-index:2000;
+  background:rgba(14,12,10,.98); backdrop-filter:blur(20px);
+  flex-direction:column; align-items:center; justify-content:center; gap:40px;
 }
-.mob-menu.open { display: flex; }
-.mob-close {
-  position: absolute; top: 28px; right: 28px;
-  background: none; border: none; color: var(--fog);
-  font-size: 28px; cursor: pointer;
-}
+.mob-menu.open { display:flex; }
+.mob-close { position:absolute; top:28px; right:28px; background:none; border:none; color:var(--fog); font-size:28px; cursor:none; }
 .mob-menu a {
-  font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700;
-  color: var(--sand); text-decoration: none; transition: color .3s;
+  font-family:'Playfair Display',serif; font-size:42px; font-weight:700;
+  color:var(--sand); text-decoration:none; transition:color .3s;
 }
-.mob-menu a:hover { color: var(--gold); }
+.mob-menu a:hover { color:var(--gold); }
 
-/* ════════════════════════════════════════
-   RESPONSIVE — Full Mobile Optimization
-════════════════════════════════════════ */
-
-/* ── Tablet (≤ 1100px) ── */
+/* ── RESPONSIVE ── */
 @media(max-width:1100px){
-  .s-pad { padding: 100px 40px; }
-
-  /* Nav */
-  nav { padding: 20px 40px; }
-  nav.solid { padding: 14px 40px; }
-
-  /* Hero */
-  .hero-content { padding: 0 40px 80px; }
-  .hero-title { font-size: clamp(44px, 6vw, 80px); }
-  .hero-title .line2 { margin-left: 60px; }
-  .hero-bottom { flex-direction: column; gap: 32px; align-items: flex-start; }
-  .hero-ctas { align-items: flex-start; }
-
-  /* Destinations */
-  .dest-intro { grid-template-columns: 1fr; gap: 32px; }
-  .dest-intro-right { flex-direction: row; align-items: center; gap: 40px; }
-  .dest-stat { text-align: left; }
-  .dest-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .dest-card:first-child { grid-row: span 1; }
-
-  /* Soufies */
-  .soufies-grid { grid-template-columns: 1fr; gap: 48px; }
-  .soufies-visual { max-width: 500px; margin: 0 auto; }
-  .soufies-badge { right: 0; }
-
-  /* Transfers */
-  .transfers-intro { grid-template-columns: 1fr; gap: 24px; }
-  .transfers-grid { grid-template-columns: 1fr 1fr; }
-
-  /* Booking */
-  .booking-wrap { grid-template-columns: 1fr; gap: 48px; }
-
-  /* Footer */
-  .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 40px 40px; }
+  .dest-grid{ grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+  .dest-card:first-child{ grid-row:span 1; }
+  .soufies-grid, .booking-wrap, .transfers-intro, .dest-intro{ grid-template-columns:1fr; gap:40px; }
+  .transfers-grid{ grid-template-columns:1fr 1fr; }
 }
-
-/* ── Mobile (≤ 768px) ── */
 @media(max-width:768px){
-  /* Nav */
-  nav { padding: 16px 20px; }
-  nav.solid { padding: 12px 20px; }
-  .nav-center, .nav-right { display: none; }
-  .ham { display: flex; }
-  .nav-logo-img { height: 36px; }
-
-  /* Cursor off */
-  body { cursor: auto; }
-  #cur, #cur2 { display: none; }
-  a, button { cursor: pointer; }
-
-  /* Loader */
-  .loader-logo-img { width: 160px; }
-  .loader-bar { width: 160px; }
-
-  /* Hero */
-  .s-pad { padding: 72px 20px; }
-  .hero-content { padding: 0 20px 72px; }
-  .hero-eyebrow { font-size: 9px; letter-spacing: 3px; margin-bottom: 20px; }
-  .hero-title {
-    font-size: clamp(38px, 10vw, 64px);
-    letter-spacing: -1px;
-    margin-bottom: 28px;
-  }
-  .hero-title .line2 { margin-left: 20px; }
-  .hero-title .line3 { margin-left: 0; }
-  .hero-sub { font-size: 13px; max-width: 100%; }
-  .hero-bottom { flex-direction: column; gap: 24px; }
-  .hero-ctas { flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; }
-  .cta-primary { width: 100%; justify-content: center; padding: 16px 24px; }
-  .cta-secondary { font-size: 11px; }
-  .scroll-ind { display: none; }
-
-  /* Moon & deco */
-  .moon { width: 60px; height: 60px; top: 12%; right: 10%; }
-  .mosque svg { width: 220px; }
-  .birds { display: none; }
-
-  /* Marquee */
-  .marquee-item { font-size: 10px; padding: 0 20px; gap: 16px; }
-
-  /* Destinations */
-  .dest-grid { grid-template-columns: 1fr; gap: 3px; }
-  .dest-card { height: 300px; }
-  .dest-card:first-child { height: 340px; }
-  .dest-stat-num { font-size: 48px; }
-  .dest-intro-right { flex-direction: row; }
-
-  /* Soufies */
-  .soufies-img-wrap { aspect-ratio: 4/3; }
-  .soufies-features { margin-top: 28px; }
-  .sf-num { font-size: 28px; min-width: 36px; }
-  .soufies-badge { top: 16px; right: 8px; width: 80px; height: 80px; }
-  .soufies-badge span:first-child { font-size: 22px; }
-
-  /* Transfers */
-  .transfers-grid,
-  .transfers-grid-2col { grid-template-columns: 1fr !important; }
-  .tr-card { padding: 32px 24px; }
-  .tr-price { font-size: 26px; }
-
-  /* Testimonials */
-  .testi-track { gap: 16px; }
-  .testi-card { width: 300px; padding: 32px 28px; }
-  .testi-text { font-size: 13px; }
-
-  /* Booking */
-  .booking-wrap { gap: 36px; }
-  .booking-decor, .booking-decor-pattern { display: none; }
-  .contact-list { gap: 14px; }
-  .contact-row { padding: 14px 16px; }
-
-  /* Form */
-  .form-row2 { grid-template-columns: 1fr; gap: 0; }
-  input, select, textarea { padding: 12px 16px; font-size: 14px; }
-  .form-submit { font-size: 11px; letter-spacing: 2px; padding: 16px; }
-  label { font-size: 9px; }
-
-  /* Footer */
-  .footer-main { grid-template-columns: 1fr; gap: 36px; padding: 48px 20px 32px; }
-  .footer-logo-img { width: 130px; }
-  .footer-bottom {
-    padding: 20px;
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-  .footer-bottom div { flex-direction: column; gap: 8px; }
-  .footer-social { gap: 10px; }
-  .social-btn { width: 38px; height: 38px; font-size: 15px; }
-
-  /* Mobile menu */
-  .mob-menu a { font-size: 32px; }
-  .mob-close { cursor: pointer; }
-  .lang-btn { cursor: pointer; }
+  nav{ padding:20px 28px; }
+  nav.solid{ padding:14px 28px; }
+  .nav-center,.nav-right{ display:none; }
+  .ham{ display:flex; }
+  .s-pad{ padding:80px 28px; }
+  .hero-content{ padding:0 28px 80px; }
+  .hero-title .line2{ margin-left:30px; }
+  .hero-title .line3{ margin-left:0; }
+  .dest-grid{ grid-template-columns:1fr; }
+  .transfers-grid{ grid-template-columns:1fr; }
+  .footer-main{ grid-template-columns:1fr 1fr; padding:60px 28px 40px; }
+  .footer-bottom{ padding:20px 28px; flex-direction:column; gap:12px; text-align:center; }
+  .soufies-badge{ right:10px; }
+  body{ cursor:auto; }
+  #cur,#cur2{ display:none; }
+  a,button{ cursor:pointer; }
 }
-
-/* ── Small Mobile (≤ 430px) ── */
-@media(max-width:430px){
-  .hero-title { font-size: clamp(32px, 9vw, 48px); }
-  .s-title { font-size: clamp(30px, 8vw, 48px); }
-  .hero-title .line2 { margin-left: 10px; }
-  .dest-card { height: 260px; }
-  .dest-card:first-child { height: 300px; }
-  .dest-name { font-size: 22px; }
-  .testi-card { width: 280px; padding: 28px 20px; }
-  .soufies-badge { display: none; }
-  .tr-card { padding: 28px 20px; }
-  .s-pad { padding: 60px 16px; }
-  .hero-content { padding: 0 16px 60px; }
-  nav { padding: 14px 16px; }
+@media(max-width:500px){
+  .footer-main{ grid-template-columns:1fr; }
+  .form-row2{ grid-template-columns:1fr; }
 }
-
 
 /* ── LANGUAGE SWITCHER ── */
 .lang-btn {
@@ -1065,43 +930,3 @@ footer {
   transition: transform .3s ease;
 }
 .lang-btn.switching::after { transform: scaleX(1); }
-
-/* Add inside your @media(max-width:768px) block */
-.transfers-grid {
-  grid-template-columns: 1fr !important;
-}
-.tr-card {
-  grid-column: 1 / -1 !important;
-}
-
-.mob-lang {
-  display: flex;
-  gap: 16px;
-  margin-top: 8px;
-}
-.mob-lang .lang-btn {
-  padding: 10px 28px;
-  font-size: 13px;
-  letter-spacing: 3px;
-  cursor: pointer;
-}
-
-/* ✅ Show lang buttons on mobile nav */
-  .nav-right {
-    display: flex !important;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* Hide only the Reserve button on mobile nav */
-  .nav-right .nav-btn {
-    display: none;
-  }
-
-  /* Make lang buttons tappable */
-  .lang-btn {
-    cursor: pointer !important;
-    padding: 6px 10px;
-    font-size: 10px;
-  }
-}
