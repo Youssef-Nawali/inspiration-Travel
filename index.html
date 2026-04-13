@@ -9,6 +9,49 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <link rel="stylesheet" href="style.css">
+<style>
+/* VIP Section */
+#vip { position:relative; overflow:hidden; }
+.vip-bg { position:absolute; inset:0; background:linear-gradient(135deg, rgba(200,153,58,.04) 0%, transparent 50%, rgba(200,153,58,.06) 100%); pointer-events:none; }
+.vip-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:40px; }
+.vip-card {
+  background: var(--ink3, #1a1a2e);
+  border: 1px solid rgba(200,153,58,.15);
+  border-radius: 16px;
+  padding: 36px 28px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.vip-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200,153,58,.5);
+  box-shadow: 0 20px 60px rgba(200,153,58,.12);
+}
+.vip-card-highlight {
+  background: linear-gradient(135deg, rgba(200,153,58,.1), var(--ink3, #1a1a2e));
+  border-top: 2px solid var(--gold, #C8993A);
+}
+.vip-card-icon { font-size:40px; margin-bottom:16px; }
+.vip-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--sand, #e8d5b7);
+  margin-bottom: 12px;
+}
+.vip-card p {
+  font-size: 14px;
+  color: var(--fog, #a0a0b0);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.vip-card-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--gold, #C8993A);
+}
+@media (max-width:768px) {
+  .vip-grid { grid-template-columns:1fr; }
+}
+</style>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -44,6 +87,7 @@
   <a href="#destinations" onclick="closeMenu()" data-i18n="nav_excursions">Excursions</a>
   <a href="#soufies" onclick="closeMenu()" data-i18n="nav_soufies">Visites Soufies</a>
   <a href="#transfers" onclick="closeMenu()" data-i18n="nav_transfers">Transferts</a>
+  <a href="#vip" onclick="closeMenu()" data-i18n="nav_vip">VIP</a>
   <a href="#booking" onclick="closeMenu()" data-i18n="nav_book">Réserver</a>
 
   <!-- ✅ AJOUTER CES LIGNES -->
@@ -62,6 +106,7 @@
     <a href="#destinations" data-i18n="nav_excursions">Excursions</a>
     <a href="#soufies" data-i18n="nav_soufies">Visites Soufies</a>
     <a href="#transfers" data-i18n="nav_transfers">Transferts</a>
+    <a href="#vip" data-i18n="nav_vip">VIP</a>
     <a href="#testimonials" data-i18n="nav_reviews">Avis</a>
   </div>
   <div class="nav-right">
@@ -381,6 +426,73 @@
       <div class="tr-desc" data-i18n="tr6_desc">Un itin&eacute;raire unique selon vos envies : ville, campagne, sud, c&ocirc;te&hellip; Prix d&eacute;termin&eacute; selon destination et programme. Contactez-nous.</div>
       <div class="tr-price" data-i18n="price_quote">Sur<small> devis</small></div>
     </div>
+  </div>
+</section>
+
+<!-- VIP -->
+<section id="vip" class="s-pad">
+  <div class="vip-bg"></div>
+  <div class="vip-intro rx">
+    <div class="s-label"><div class="s-label-line"></div><span data-i18n="vip_label">Expérience VIP</span></div>
+    <h2 class="s-title" data-i18n="vip_title">Un voyage<br><em>d'exception</em></h2>
+    <p class="s-sub" data-i18n="vip_sub">Pour ceux qui recherchent l'excellence absolue. Services exclusifs, véhicules premium, accompagnement personnalisé et accès privilégiés.</p>
+  </div>
+  <div class="dest-grid rx">
+    <div class="dest-card">
+      <div class="dest-card-img" style="background-image:url('vip-transfer.jpg')"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag">👑 VIP · Transfert</div>
+        <div class="dest-name" data-i18n="vip1_title">Transfert VIP Premium</div>
+        <div class="dest-desc" data-i18n="vip1_desc">Véhicule haut de gamme (Mercedes Classe V, SUV luxe), chauffeur bilingue en costume, bouteille d'eau fraîche, Wi-Fi embarqué. Ponctualité garantie.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_on_request">Prix sur <small>demande</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img" style="background-image:url('vip-excursion.jpg')"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag">🏛️ VIP · Excursion</div>
+        <div class="dest-name" data-i18n="vip2_title">Excursion Privée VIP</div>
+        <div class="dest-desc" data-i18n="vip2_desc">Guide expert privé, itinéraire 100% personnalisé, accès exclusifs aux sites, déjeuner gastronomique inclus dans un restaurant de charme.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_on_request">Prix sur <small>demande</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img" style="background-image:url('vip-soufi.jpg')"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag">🌙 VIP · Spirituel</div>
+        <div class="dest-name" data-i18n="vip3_title">Immersion Soufie VIP</div>
+        <div class="dest-desc" data-i18n="vip3_desc">Visite spirituelle avec accès privé aux zaouïas, rencontre personnelle avec un maître soufi, cérémonie de dhikr intime réservée à votre groupe.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_on_request">Prix sur <small>demande</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-card-img" style="background-image:url('vip-pack.jpg')"></div>
+      <div class="dest-card-gradient"></div>
+      <div class="dest-card-content">
+        <div class="dest-tag">💎 VIP · Pack Complet</div>
+        <div class="dest-name" data-i18n="vip4_title">Pack VIP Intégral</div>
+        <div class="dest-desc" data-i18n="vip4_desc">Séjour clé en main : transferts luxe, excursions privées, hébergement 5 étoiles, conciergerie 24/7. Votre voyage de rêve, sans aucun souci.</div>
+        <div class="dest-footer">
+          <div class="dest-price" data-i18n="price_quote">Sur <small>devis</small></div>
+          <a href="#booking" class="dest-arrow">&rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:44px" class="rx">
+    <a href="#booking" class="cta-primary"><span data-i18n="vip_cta">Réserver mon expérience VIP</span></a>
   </div>
 </section>
 
